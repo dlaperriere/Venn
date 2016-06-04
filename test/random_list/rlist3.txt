@@ -1,0 +1,3 @@
+r1	genelist1.txt
+r2	genelist2.txt
+r3	genelist3.txt
