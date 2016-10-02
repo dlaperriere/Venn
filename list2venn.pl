@@ -25,10 +25,11 @@
   
 =head2 Notes
 
- Require Vennerable and gplots packages:
+ Require gplots, Vennerable and UpSetR packages:
 
-  * https://github.com/js229/Vennerable
   * https://cran.r-project.org/web/packages/gplots
+  * https://github.com/js229/Vennerable
+  * https://cran.r-project.org/web/packages/UpSetR/index.html
 
 =cut
 
@@ -130,8 +131,9 @@ open(R,">",$R_script) or die "could NOT create R script \"$R_script\": $! \n";
 print R <<END_R;
 # $cmd_line
 
-require("Vennerable") 
 require("gplots") 
+require("Vennerable") 
+require("UpSetR")
 
 par(ps=10)
 
@@ -184,6 +186,13 @@ if(length(category) <= 9){
   
  }else{ print("skipping Vennerable (> 9 lists) ...")}
 
+##########################################
+# UpSetR : A More Scalable Alternative to Venn and Euler Diagrams for Visualizing Intersecting Sets
+# https://cran.r-project.org/web/packages/UpSetR/index.html
+  
+  upset(d, sets.bar.color = "#56B4E9",nsets = length(category), order.by = "freq", empty.intersections = "off", show.numbers = T )
+  
+ 
 ##########################################
 # heatmap
 
