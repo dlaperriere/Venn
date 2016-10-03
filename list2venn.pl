@@ -120,7 +120,7 @@ my $names = join(",",sort keys(%list_data) );
 my $catnames = "\"".join("\",\"",sort keys(%list_data) )."\"";
 
 my $list_count = keys %list_data;
-die "can only generate venn diagram for 2-9 lists (# list : $list_count) ... \n" unless $list_count >= 2 and $list_count <= 9;
+die "can only generate venn diagrams for 2 or more lists (# list : $list_count) ... \n" unless $list_count >= 2;
 
 ## generate R script
 my $R_script = $file;
