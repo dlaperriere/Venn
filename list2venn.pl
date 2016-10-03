@@ -190,7 +190,7 @@ if(length(category) <= 9){
 # UpSetR : A More Scalable Alternative to Venn and Euler Diagrams for Visualizing Intersecting Sets
 # https://cran.r-project.org/web/packages/UpSetR/index.html
   
-  upset(d, sets.bar.color = "#56B4E9",nsets = length(category), order.by = "freq", empty.intersections = "off", show.numbers = T )
+  upset(d, sets.bar.color = "#56B4E9", nsets = length(category), nintersects = 60, order.by = "freq", empty.intersections = "off", show.numbers = T )
   
  
 ##########################################
