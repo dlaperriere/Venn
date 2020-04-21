@@ -37,13 +37,21 @@
      library(devtools)
      install_github("js229/Vennerable")
      
-     source("http://bioconductor.org/biocLite.R")
-     biocLite("graph")
-     biocLite("RBGL")
-     
      # older version 
      # https://r-forge.r-project.org/projects/vennerable/
-     # install.packages("Vennerable", repos="http://R-Forge.R-project.org")
+     # install.packages("Vennerable", repos="http://R-Forge.R-project.org") 
+     
+     # R version >= 3.5
+     if (!requireNamespace("BiocManager", quietly = TRUE))
+        install.packages("BiocManager")
+     BiocManager::install(c("graph", "RBGL"))      
+     
+     # R version < 3.5
+     #source("http://bioconductor.org/biocLite.R")
+     #biocLite("graph")
+     #biocLite("RBGL")
+     
+     
 
    
 ###   Author
